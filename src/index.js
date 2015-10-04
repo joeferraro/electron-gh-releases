@@ -53,10 +53,10 @@ export default class Update {
       if (err || res.statusCode !== 200) return cb('Could not get feed URL.', null)
 
       // Make sure the feedUrl links to latest tag
-      let zipUrl = JSON.parse(data).url
-      if (semver.clean(zipUrl.split('/').slice(-2, -1)[0]) !== semver.clean(latest)) {
-        return cb('Url from auto_updater.json does not linking to latest release.', null)
-      }
+      // let zipUrl = JSON.parse(data).url
+      // if (semver.clean(zipUrl.split('/').slice(-2, -1)[0]) !== semver.clean(latest)) {
+      //   return cb('Url from auto_updater.json is not linking to latest release.', null)
+      // }
 
       cb(err, feedUrl)
     })
