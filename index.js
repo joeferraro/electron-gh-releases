@@ -73,10 +73,10 @@ var Update = (function () {
         if (err || res.statusCode !== 200) return cb('Could not get feed URL.', null);
 
         // Make sure the feedUrl links to latest tag
-        var zipUrl = JSON.parse(data).url;
-        if (semver.clean(zipUrl.split('/').slice(-2, -1)[0]) !== semver.clean(latest)) {
-          return cb('Url from auto_updater.json does not linking to latest release.', null);
-        }
+        // var zipUrl = JSON.parse(data).url;
+        // if (semver.clean(zipUrl.split('/').slice(-2, -1)[0]) !== semver.clean(latest)) {
+        //   return cb('Url from auto_updater.json does not linking to latest release.', null);
+        // }
 
         cb(err, feedUrl);
       });
